@@ -1,0 +1,40 @@
+#%RAML 1.0
+title: SmartMeterAPI
+version: 1.0
+mediaType: application/json
+
+types:
+  SmartMeterReading:
+    type: object
+    properties:
+      meterId:
+        type: string
+        description: Unique identifier for the smart meter
+        example: "12345"
+      timestamp:
+        type: datetime
+        description: Timestamp of the reading
+        example: "2024-06-25T12:34:56Z"
+      reading:
+        type: number
+        description: Meter reading value
+        example: 543.21
+
+/reading:
+  post:
+    description: Submit a smart meter reading
+    body:
+      application/json:
+        type: SmartMeterReading
+        examples:
+          example1:
+            description: A simple example of a smart meter reading
+            value:
+              meterId: "12345"
+              timestamp: "2024-06-25T12:34:56Z"
+              reading: 543.21
+    responses:
+      201:
+        description: Reading successfully submitted
+      400:
+        description: Invalid input

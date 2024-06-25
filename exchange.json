@@ -1,0 +1,10 @@
+{
+  "main": "smart-meter-api.raml",
+  "name": "Smart Meter API",
+  "classifier": "raml",
+  "apiVersion": "v1",
+  "descriptorVersion": "1.0.0",
+  "groupId": null,
+  "assetId": "smart-meter-api",
+  "version": "1.0.0"
+}
